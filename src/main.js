@@ -121,3 +121,5 @@ function smoothScroll() {
     behavior: 'smooth',
   });
 }
+
+console.log('The end!');
