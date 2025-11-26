@@ -52,9 +52,10 @@ async function onSearch(e) {
     }
 
     totalHits = data.totalHits;
+
     createGallery(data.hits);
 
-    if (data.hits.length === 15) {
+    if (totalHits >= data.hits.length) {
       showLoadMoreButton();
     }
   } catch (error) {
@@ -69,6 +70,7 @@ async function onSearch(e) {
 }
 
 async function onLoadMore() {
+  hideLoadMoreButton();
   currentPage += 1;
   showLoader();
 
@@ -79,6 +81,7 @@ async function onLoadMore() {
     smoothScroll();
 
     const loadedImages = document.querySelectorAll('.gallery-item').length;
+
     if (loadedImages >= totalHits) {
       hideLoadMoreButton();
       iziToast.info({
@@ -86,6 +89,8 @@ async function onLoadMore() {
         message: "We're sorry, but you've reached the end of search results.",
         position: 'topRight',
       });
+    } else {
+      showLoadMoreButton();
     }
   } catch (error) {
     iziToast.error({
