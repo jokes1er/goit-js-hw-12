@@ -1,13 +1,12 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import '../css/styles.css';
 
-const refs = {
+export const refs = {
+  formEl: document.querySelector('.form'),
   galleryElement: document.querySelector('.gallery'),
   loaderBackdrop: document.querySelector('.loader-backdrop'),
-  loadmoreBtn: document.querySelector('.load-more'),
+  loadMoreBtn: document.querySelector('.load-more'),
 };
-console.log(refs.loadmoreBtn);
 
 export const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
@@ -51,17 +50,17 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  refs.loaderBackdrop.classList.remove('.hidden');
+  refs.loaderBackdrop.classList.remove('hidden');
 }
 
 export function hideLoader() {
-  refs.loaderBackdrop.classList.add('.hidden');
+  refs.loaderBackdrop.classList.add('hidden');
 }
 
 export function showLoadMoreButton() {
-  loadMoreBtn.classList.remove('hidden');
+  refs.loadMoreBtn.classList.remove('hidden');
 }
 
 export function hideLoadMoreButton() {
-  loadMoreBtn.classList.add('hidden');
+  refs.loadMoreBtn.classList.add('hidden');
 }
