@@ -1,0 +1,34 @@
+.gallery {
+    margin: 20px 320px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.gallery-item {
+    width: 360px;
+    border: solid 1px grey;
+}
+
+.gallery-image:hover {
+    transform: translate(0px, -4px);
+}
+
+.card-info {
+    display: flex;
+    text-align: center;
+}
+.card-likes,.card-views,.card-comments,.card-downloads {
+    font-size: 12px;
+    padding: 9px;
+}
+
+.hidden-card-info {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.card-info {
+    opacity: 1;
+}

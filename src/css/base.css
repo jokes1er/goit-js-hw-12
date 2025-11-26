@@ -30,3 +30,43 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+
+body>h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+input[name='search-text'] {
+  height: 40px;
+  width: 272px;
+  padding: 0 5px;
+  margin-right: 10px;
+}
+
+.loader {
+  width: 91px;
+  height: 40px;
+  float: left;
+  border-radius: 8px;
+  color: white;
+  background-color: #4E75FF;
+  margin: 1px;
+  letter-spacing: 1.5px;
+  border: transparent;
+}
+
+.load-more {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+}
+.hidden {
+  display: none;
+}
